@@ -1,4 +1,4 @@
-<?php view('partials/header'); ?>
+<?php view('partials/header', ['pageTitle' => 'About']); ?>
 <div class="container">
     <div class="page-header">
         <h1>About Us</h1>

@@ -16,6 +16,7 @@
             <ul class="nav navbar-nav">
                 <li <?= routeIs('/') ? 'class="active"' : '' ?>><a href="/">Home <span class="sr-only">(current)</span></a></li>
                 <li <?= routeIs('/about') ? 'class="active"' : '' ?>><a href="/about">About</a></li>
+                <li <?= routeIs('/pages') ? 'class="active"' : '' ?>><a href="/pages">Pages</a></li>
             </ul>
 
         </div><!-- /.navbar-collapse -->

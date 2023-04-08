@@ -9,10 +9,16 @@ class Database
     public $connection;
     public $statement;
 
-    public function __construct($config, $username = 'root', $password = '')
+    public function __construct($config)
     {
-        $dsn = 'mysql:' . http_build_query($config, '', ';');
+        $username = $config['username'];
+        $password = $config['password'];
 
+        //removing username and password to allow generating dsn quickly
+        unset($config['username']);
+        unset($config['password']);
+
+        $dsn = 'mysql:' . http_build_query($config, '', ';');
         $this->connection = new PDO($dsn, $username, $password, [
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
         ]);
@@ -27,19 +33,19 @@ class Database
         return $this;
     }
 
-    public function get()
+    public function fetchAll()
     {
         return $this->statement->fetchAll();
     }
 
-    public function find()
+    public function fetch()
     {
         return $this->statement->fetch();
     }
 
-    public function findOrFail()
+    public function fetchOrFail()
     {
-        $result = $this->find();
+        $result = $this->fetch();
 
         if (!$result) {
             abort();

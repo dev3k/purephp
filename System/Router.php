@@ -17,10 +17,6 @@ class Router
         return $this;
     }
 
-    public function get()
-    {
-
-    }
 
     public function handle($uri, $method)
     {
