@@ -1,4 +1,4 @@
 <?php
 $pages = new \App\models\Pages();
 
-view('Pages/index', ['pages' => $pages->get()]);
+view('pages/index', ['pages' => $pages->get()]);

@@ -1,2 +1,2 @@
 <?php
-view('About/index');
+view('about/index');

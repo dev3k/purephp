@@ -1,3 +1,3 @@
 <?php
-view('Home/index');
+view('home/index');
 
