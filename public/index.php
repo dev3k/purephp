@@ -1,5 +1,7 @@
 <?php
-session_start();
+
+//todo for login
+//session_start();
 
 const BASE_PATH = __DIR__ . '/../';
 
@@ -7,7 +9,7 @@ const BASE_PATH = __DIR__ . '/../';
 require BASE_PATH . '/System/Functions.php';
 $config = require base_path('app/config/main.php');
 
-//to load any class from base path
+//to load any unknown class from base path
 spl_autoload_register(function ($class) {
     $class = str_replace('\\', DIRECTORY_SEPARATOR, $class);
 

@@ -2,7 +2,6 @@
 global $router;
 
 $router->get('/', 'controllers/home');
-$router->get('/about', 'controllers/about');
 
 $router->get('/pages', 'controllers/pages/index');
 $router->get('/pages/view', 'controllers/pages/view');
