@@ -5,7 +5,7 @@ return [
         'port' => 3306,
         'dbname' => 'purephp',
         'username' => 'root',
-        'password' => 'letmein123',
+        'password' => '',
         'charset' => 'utf8mb4'
     ],
 ];
