@@ -14,6 +14,9 @@
                     <a href="/pages" type="button" class="btn btn-default block">Back</a>
                 </li>
                 <li>
+                    <a href="/pages/edit?id=<?= $page['id'] ?>" type="button" class="btn btn-primary block">Update</a>
+                </li>
+                <li>
                     <form action="/pages/delete" method="post" class="mt-4">
                         <input type="hidden" name="_method" value="DELETE">
                         <input type="hidden" name="id" value="<?= $page['id'] ?>">

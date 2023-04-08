@@ -45,4 +45,18 @@ class BaseModel
         $dbValues = implode(',:', $columns);
         $this->db->query("insert into {$this->table} ({$dbColumns}) VALUES (:{$dbValues})", $attributes);
     }
+
+    public function update(int $id, $attributes = []): void
+    {
+
+        $this->findOne($id);
+        $columns = array_keys($attributes);
+        $fields = [];
+        foreach ($columns as $column) {
+            $fields[] = $column . '=:' . $column;
+        }
+        $updateFields = implode(',',$fields);
+        $this->db->query("update {$this->table} set {$updateFields} where id=:id", array_merge($attributes,['id'=>$id]));
+
+    }
 }

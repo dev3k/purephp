@@ -26,6 +26,9 @@
                             <a class="btn btn-default btn-sm" href="/pages/view?id=<?= $page['id'] ?>">View</a>
                         </li>
                         <li>
+                            <a class="btn btn-primary btn-sm" href="/pages/edit?id=<?= $page['id'] ?>">Update</a>
+                        </li>
+                        <li>
                             <form action="/pages/delete" method="post" class="mt-4">
                                 <input type="hidden" name="_method" value="DELETE">
                                 <input type="hidden" name="id" value="<?= $page['id'] ?>">
