@@ -7,17 +7,22 @@
         <?= htmlspecialchars($page['content']) ?>
     </div>
     <hr/>
-    <ul class="nav nav-pills">
-        <li>
-            <a href="/pages" type="button" class="btn btn-default">Back</a>
-        </li>
-        <li>
-            <form action="/pages/delete" method="post">
-                <input type="hidden" name="id" value="<?= $page['id'] ?>">
-                <button type="submit" class="btn btn-danger">Delete</button>
-            </form>
-        </li>
-    </ul>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <ul class="list-unstyled list-inline">
+                <li>
+                    <a href="/pages" type="button" class="btn btn-default block">Back</a>
+                </li>
+                <li>
+                    <form action="/pages/delete" method="post" class="mt-4">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <input type="hidden" name="id" value="<?= $page['id'] ?>">
+                        <button type="submit" class="btn btn-default btn-danger block">Delete</button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </div>
 </div>
 
 <?php view('partials/footer'); ?>

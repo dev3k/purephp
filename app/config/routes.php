@@ -1,8 +1,11 @@
 <?php
 global $router;
 
-$router->add('/', 'controllers/home');
-$router->add('/about', 'controllers/about');
-$router->add('/pages', 'controllers/pages/index');
-$router->add('/pages/view', 'controllers/pages/view', 'delete');
-$router->add('/pages/delete', 'controllers/pages/delete', 'delete');
+$router->get('/', 'controllers/home');
+$router->get('/about', 'controllers/about');
+
+$router->get('/pages', 'controllers/pages/index');
+$router->get('/pages/view', 'controllers/pages/view');
+$router->get('/pages/create', 'controllers/pages/create');
+$router->post('/pages/create', 'controllers/pages/store');
+$router->delete('/pages/delete', 'controllers/pages/delete');

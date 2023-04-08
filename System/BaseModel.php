@@ -37,4 +37,12 @@ class BaseModel
             'id' => $_POST['id']
         ]);
     }
+
+    public function create(array $attributes = []): void
+    {
+        $columns = array_keys($attributes);
+        $dbColumns = implode(',', $columns);
+        $dbValues = implode(',:', $columns);
+        $this->db->query("insert into {$this->table} ({$dbColumns}) VALUES (:{$dbValues})", $attributes);
+    }
 }
