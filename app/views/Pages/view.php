@@ -17,8 +17,6 @@
                 <button type="submit" class="btn btn-danger">Delete</button>
             </form>
         </li>
-
-        <!--    <a type="button" class="btn btn-default">Right</a>-->
     </ul>
 </div>
 
